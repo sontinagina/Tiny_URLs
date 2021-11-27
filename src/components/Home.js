@@ -39,12 +39,14 @@ function Home() {
          console.log(URLs, "URLs called");
          setFlag(true);
          fetch(URLs, {
+            credentials: "include",
             method: "POST",
             body: JSON.stringify({
                url,
             }),
             headers: {
                "Content-Type": "application/json",
+               "Access-Control-Allow-Origin": true,
             },
          })
             .then((r) => {
