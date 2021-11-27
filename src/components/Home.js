@@ -15,6 +15,8 @@ function Home() {
    const [genurl, setGenurl] = useState("");
    const [isAlert, setIsAlert] = useState(false);
    const [flag, setFlag] = useState(false);
+   const URLs = "https://tinnys.herokuapp.com/u/getUrl";
+   // const URLs = "http://localhost:3002/getUrl";
    const validURL = function (str) {
       var pattern = new RegExp(
          "^(https?:\\/\\/)?" + // protocol
@@ -27,12 +29,16 @@ function Home() {
       ); // fragment locator
       return !!pattern.test(str);
    };
+
    const getUrl = (url) => {
+      let err = false;
+
       const valid = validURL(url);
       if (valid) {
          setGenurl("");
+         console.log(URLs, "URLs called");
          setFlag(true);
-         fetch("https://tinnys.herokuapp.com/u/getUrl", {
+         fetch(URLs, {
             method: "POST",
             body: JSON.stringify({
                url,
@@ -51,12 +57,15 @@ function Home() {
                   return r.json();
                } else {
                   console.log(r);
+                  err = true;
                   alert("Failed to generate small link!");
                }
             })
             .then((r) => {
-               console.log(r.url);
-               setGenurl(r.url);
+               if (!err) {
+                  console.log(r.url);
+                  setGenurl(r.url);
+               }
             });
       } else {
          alert("Please enter a valid URL!");
