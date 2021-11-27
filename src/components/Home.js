@@ -15,7 +15,7 @@ function Home() {
    const [genurl, setGenurl] = useState("");
    const [isAlert, setIsAlert] = useState(false);
    const [flag, setFlag] = useState(false);
-   const URLs = "https://tinnys.herokuapp.com/u/getUrl";
+   const URLs = "https://tinnys.herokuapp.com/getUrl";
    // const URLs = "http://localhost:3002/getUrl";
    const validURL = function (str) {
       var pattern = new RegExp(
