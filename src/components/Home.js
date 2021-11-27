@@ -32,7 +32,7 @@ function Home() {
       if (valid) {
          setGenurl("");
          setFlag(true);
-         fetch("https://tinnys.herokuapp.com/getUrl", {
+         fetch("https://tinnys.herokuapp.com/u/getUrl", {
             method: "POST",
             body: JSON.stringify({
                url,
