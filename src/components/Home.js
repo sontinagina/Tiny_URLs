@@ -1,4 +1,5 @@
 import "../App.css";
+//heroku buildpacks:set mars/create-react-app
 import {
    Navbar,
    Container,
@@ -15,8 +16,7 @@ function Home() {
    const [genurl, setGenurl] = useState("");
    const [isAlert, setIsAlert] = useState(false);
    const [flag, setFlag] = useState(false);
-   const URLs = "https://tinnys.herokuapp.com/getUrl";
-   // const URLs = "http://localhost:3002/getUrl";
+   const URLs = "getUrl";
    const validURL = function (str) {
       var pattern = new RegExp(
          "^(https?:\\/\\/)?" + // protocol
