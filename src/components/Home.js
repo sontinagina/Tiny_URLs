@@ -16,7 +16,7 @@ function Home() {
    const [genurl, setGenurl] = useState("");
    const [isAlert, setIsAlert] = useState(false);
    const [flag, setFlag] = useState(false);
-   const URLs = "/getUrl/";
+   const URLs = "https://tinnys.herokuapp.com/getUrl/";
    const validURL = function (str) {
       var pattern = new RegExp(
          "^(https?:\\/\\/)?" + // protocol
