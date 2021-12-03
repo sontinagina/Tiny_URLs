@@ -39,7 +39,7 @@ function Home() {
          console.log(URLs, "URLs called");
          setFlag(true);
          fetch(URLs, {
-            credentials: "include",
+            // credentials: "include",
             method: "POST",
             body: JSON.stringify({
                url,
